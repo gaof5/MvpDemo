@@ -5,6 +5,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.gaof.mvpdemo.adapter.GirlAdapter;
 import com.gaof.mvpdemo.bean.Girl;
 import com.gaof.mvpdemo.presenter.GirlPresenter;
 import com.gaof.mvpdemo.view.IGirlView;
@@ -37,6 +38,10 @@ public class MainActivity extends BaseActivity<IGirlView,GirlPresenter<IGirlView
 
     @Override
     public void showGirl(List<Girl> girls) {
-        listView.setAdapter(new ArrayAdapter<Girl>(this,android.R.layout.simple_list_item_1,girls));
+        if(null!=girls){
+            GirlAdapter girlAdapter=new GirlAdapter(this,girls);
+            listView.setAdapter(girlAdapter);
+        }
+//        listView.setAdapter(new ArrayAdapter<Girl>(this,android.R.layout.simple_list_item_1,girls));
     }
 }
