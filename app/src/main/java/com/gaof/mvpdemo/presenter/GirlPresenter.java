@@ -1,6 +1,7 @@
 package com.gaof.mvpdemo.presenter;
 
 import com.gaof.mvpdemo.bean.Girl;
+import com.gaof.mvpdemo.contact.GirlContact;
 import com.gaof.mvpdemo.model.GirlModelImpl;
 import com.gaof.mvpdemo.model.IGirlModel;
 import com.gaof.mvpdemo.view.IGirlView;
@@ -10,9 +11,8 @@ import java.util.List;
 
 /**
  * 表示层
- * @param <T>
  */
-public class GirlPresenter<T extends IGirlView> extends BasePresenter<T>{
+public class GirlPresenter extends BasePresenter<GirlContact.View> implements GirlContact.Presenter{
 
     //1.View层调用
 //    IGirlView girlView;
